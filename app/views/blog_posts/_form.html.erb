@@ -1,0 +1,17 @@
+<%= form_with model: blog_post do |form| %>
+  <%# binding.irb %>
+  <% if form.object.errors.any? %>
+    <% form.object.errors.full_messages.each do |err| %>
+      <div><%= err %></div>
+    <% end %>
+  <% end %>
+  <div>
+    <%= form.label :title%>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body,  placeholder:"Enter the content..." %>
+  </div>
+  <%= form.button %>
+<% end %>
