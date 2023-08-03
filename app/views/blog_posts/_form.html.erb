@@ -13,5 +13,9 @@
     <%= form.label :body %>
     <%= form.text_area :body,  placeholder:"Enter the content..." %>
   </div>
+   <div>
+    <%# include_blank: true  允许为空值 %>
+    <%= form.datetime_select :published_at, include_blank: true %>
+  </div>
   <%= form.button %>
 <% end %>

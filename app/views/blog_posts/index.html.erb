@@ -4,6 +4,13 @@
   <% @blog_posts.each do |blog| %>
     <div>
       <%= link_to blog.title, blog %>
+      <% if blog.draft? %>
+        <div>草稿状态</div>
+      <% elsif blog.published? %>
+        <div>发布状态</div>
+      <% else %>
+        <div>预发布状态</div>
+      <% end %>
     </div>
   <% end %>
 </div>
